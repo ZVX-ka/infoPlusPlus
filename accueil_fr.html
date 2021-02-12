@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cardstyle.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+    <nav class="sidebar">
+      <div class="text">
+        Menu
+      </div>
+      <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li>
+          <a href="#" class="feat-btn"
+            >Features
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="feat-show">
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Elements</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Shortcuts</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li>
+          <a href="#" class="serv-btn"
+            >Langue
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="serv-show">
+            <li><a href="#">English</a></li>
+            <li><a href="#">Français</a></li>
+            <li><a href="#">العربية</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="content">
+      <div class="header">
+        Info+
+      </div>
+      <p>
+        Tunisie
+      </p>
+    </div>
+    <script>
+      $(".btn").click(function() {
+        $(this).toggleClass("click");
+        $(".sidebar").toggleClass("show");
+      });
+      $(".feat-btn").click(function() {
+        $("nav ul .feat-show").toggleClass("show");
+        $("nav ul .first").toggleClass("rotate");
+      });
+      $(".serv-btn").click(function() {
+        $("nav ul .serv-show").toggleClass("show1");
+        $("nav ul .second").toggleClass("rotate");
+      });
+      $("nav ul li").click(function() {
+        $(this)
+          .addClass("active")
+          .siblings()
+          .removeClass("active");
+      });
+    </script>
+    <!DOCTYPE html>
+    <!-- Created By CodingNepal -->
+    <html lang="fr" dir="ltr">
+      <head>
+        <meta charset="utf-8" />
+        <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
+        <!-- <title>Awesome Product Card Design | CodingNepal</title> -->
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      </head>
+      <body>
+        <div class="container">
+          <div class="image">
+            <img
+              src="Photos/P15.png"
+              alt=""
+            />
+          </div>
+          <div class="card-content">
+            <div class="wrapper">
+              <div class="title">
+                HP Pavilion 15
+              </div>
+              <p>
+                PC Hp
+              </p>
+              <span class="price">950TND</span>
+              <div class="content size">
+                <div class="name size-name">
+                  Size
+                </div>
+                <div class="size-value">
+                  <span class="color">XS</span>
+                  <span class="color">S</span>
+                  <span class="active">M</span>
+                  <span class="color">L</span>
+                  <span class="color">XL</span>
+                </div>
+              </div>
+              <div class="content colour">
+                <div class="name colour-name">
+                  Colour
+                </div>
+                <div class="colour-value">
+                  <span
+                    class="white"
+                    data-color="lightgrey"
+                    data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png"
+                  ></span>
+                  <span
+                    class="blue active"
+                    data-color="#456ABD"
+                    data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png"
+                  ></span>
+                  <span
+                    class="yellow"
+                    data-color="#EAA523"
+                    data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png"
+                  ></span>
+                </div>
+              </div>
+              <div class="btns">
+                <button><a href="#">Plus Info</a></button>
+                <button><a href="callpage.html">Appel</a></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          $(".colour-value span").click(function() {
+            $(".colour-value span").removeClass("active");
+            $(this).addClass("active");
+            $("body").css("background", $(this).attr("data-color"));
+            $(".wrapper .price").css("color", $(this).attr("data-color"));
+            $(".size-value span.color").css(
+              "color",
+              $(this).attr("data-color")
+            );
+            $(".size-value span.active").css(
+              "background",
+              $(this).attr("data-color")
+            );
+            $(".image img").attr("src", $(this).attr("data-img"));
+            $(".btns button").css({
+              background: $(this).attr("data-color"),
+              "border-color": $(this).attr("data-color")
+            });
+          });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
